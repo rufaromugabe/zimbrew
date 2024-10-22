@@ -1,22 +1,21 @@
 "use client"
-
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from "@/components/ui/dialog";
+import Input from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
 import {
   Sheet,
   SheetContent,
@@ -24,11 +23,12 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger
-} from "@/components/ui/sheet"
-import { Slider } from "@/components/ui/slider"
-import { toast } from "@/hooks/use-toast"
-import { Coffee, Minus, Plus, ShoppingCart, Star, Trash2 } from "lucide-react"
-import { useState } from "react"
+} from "@/components/ui/sheet";
+import { Slider } from "@/components/ui/slider";
+import { toast } from "@/hooks/use-toast";
+import { Coffee, Minus, Plus, ShoppingCart, Star, Trash2 } from "lucide-react";
+import Link from 'next/link';
+import { useState } from "react";
 
 interface Product {
   id: number
@@ -106,11 +106,8 @@ export function ProductsPage() {
   }
 
   const filterProducts = (search: string, category: string, price: number[]) => {
-    let filtered = products.filter((product) => 
-      product.name.toLowerCase().includes(search.toLowerCase()) &&
-      (category === "All" || product.category === category) &&
-      product.price >= price[0] && product.price <= price[1]
-    )
+    let filtered = products.filter(product => product.category === category);
+    let sorted = filtered.sort((a, b) => a.price - b.price);
     setFilteredProducts(filtered)
     sortProducts(sortOption, filtered)
   }
@@ -264,16 +261,16 @@ export function ProductsPage() {
             <span className="ml-2 text-lg font-semibold">ZimBrew</span>
           </a>
           <nav className="ml-auto flex gap-4 sm:gap-6">
-            <a className="text-sm font-medium hover:underline underline-offset-4" href="/">
-              Home
-            </a>
-            <a className="text-sm font-medium hover:underline underline-offset-4" href="/products">
-              Shop
-            </a>
-            <a className="text-sm font-medium hover:underline underline-offset-4" href="contact">
-              Contact
-            </a>
-          </nav>
+  <Link href="/"legacyBehavior>
+    <a className="text-sm font-medium hover:underline underline-offset-4">Home</a>
+  </Link>
+  <Link href="/products"legacyBehavior>
+    <a className="text-sm font-medium hover:underline underline-offset-4">Shop</a>
+  </Link>
+  <Link href="/contact"legacyBehavior>
+    <a className="text-sm font-medium hover:underline underline-offset-4">Contact</a>
+  </Link>
+</nav>
           <Sheet open={isCartOpen} onOpenChange={setIsCartOpen}>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" className="ml-4 relative">

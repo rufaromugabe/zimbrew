@@ -1,11 +1,11 @@
 "use client"
-
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Coffee, Mail, MapPin, Phone } from "lucide-react"
-import { useState } from "react"
+import { Button } from "@/components/ui/button";
+import Input from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import Textarea from "@/components/ui/textarea";
+import { Coffee, Mail, MapPin, Phone } from "lucide-react";
+import Link from 'next/link';
+import { useState } from "react";
 
 export function ContactUsComponent() {
   const [formData, setFormData] = useState({
@@ -39,16 +39,16 @@ export function ContactUsComponent() {
             <span className="ml-2 text-lg font-semibold">ZimBrew</span>
           </a>
           <nav className="ml-auto flex gap-4 sm:gap-6">
-            <a className="text-sm font-medium hover:underline underline-offset-4" href="/">
-              Home
-            </a>
-            <a className="text-sm font-medium hover:underline underline-offset-4" href="/products">
-              Shop
-            </a>
-            <a className="text-sm font-medium hover:underline underline-offset-4" href="#">
-              Contact
-            </a>
-          </nav>
+  <Link href="/"legacyBehavior>
+    <a className="text-sm font-medium hover:underline underline-offset-4">Home</a>
+  </Link>
+  <Link href="/products"legacyBehavior>
+    <a className="text-sm font-medium hover:underline underline-offset-4">Shop</a>
+  </Link>
+  <Link href="/contact"legacyBehavior>
+    <a className="text-sm font-medium hover:underline underline-offset-4">Contact</a>
+  </Link>
+</nav>
         </div>
       </header>
 

@@ -1,9 +1,8 @@
 "use client"
-
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { Button } from "@/components/ui/button";
+import Input from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import {
   Sheet,
   SheetContent,
@@ -12,9 +11,10 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet"
-import { ArrowRight, Coffee, Minus, Plus, ShoppingCart, Star, Trash2 } from "lucide-react"
-import { useState } from "react"
+} from "@/components/ui/sheet";
+import { ArrowRight, Coffee, Minus, Plus, ShoppingCart, Star, Trash2 } from "lucide-react";
+import Link from 'next/link';
+import { useState } from "react";
 
 interface Product {
   id: number
@@ -155,17 +155,16 @@ export function ZimbrewCoffeeShop() {
             <span className="ml-2 text-lg font-semibold">ZimBrew</span>
           </a>
           <nav className="ml-auto flex gap-4 sm:gap-6">
-          <a className="text-sm font-medium hover:underline underline-offset-4" href="/">
-              Home
-            </a>
-            <a className="text-sm font-medium hover:underline underline-offset-4" href="/products">
-              Shop
-            </a>
-            
-            <a className="text-sm font-medium hover:underline underline-offset-4" href="/contact">
-              Contact
-            </a>
-          </nav>
+  <Link href="/"legacyBehavior>
+    <a className="text-sm font-medium hover:underline underline-offset-4">Home</a>
+  </Link>
+  <Link href="/products"legacyBehavior>
+    <a className="text-sm font-medium hover:underline underline-offset-4">Shop</a>
+  </Link>
+  <Link href="/contact"legacyBehavior>
+    <a className="text-sm font-medium hover:underline underline-offset-4">Contact</a>
+  </Link>
+</nav>
           <Sheet open={isCartOpen} onOpenChange={setIsCartOpen}>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" className="ml-4 relative">
