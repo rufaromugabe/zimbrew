@@ -1,10 +1,10 @@
+import { ShopPageComponent } from "@/components/shop-page";
+
 
 
 
 export default function Home() {
   return (
-    <h1>Comming soon
-      
-    </h1>
+    <ShopPageComponent/>
   );
 }
