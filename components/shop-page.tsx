@@ -164,6 +164,7 @@ export function ShopPageComponent() {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+      <link rel="icon" href="/favicon.ico" />
         <div className="container flex h-14 items-center">
           <Link href="/" legacyBehavior>
             <a className="flex items-center justify-center">

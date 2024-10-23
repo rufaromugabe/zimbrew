@@ -149,6 +149,7 @@ export function ZimbrewCoffeeShop() {
   return (
     <div className="flex flex-col justify-center  min-h-screen bg-gray-50">
       <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-neutral-950/95 dark:supports-[backdrop-filter]:bg-neutral-950/60">
+      <link rel="icon" href="/favicon.ico" />
         <div className="container flex h-14 items-center">
           <a className="flex items-center justify-center" href="#">
             <Coffee className="h-6 w-6 text-neutral-900 dark:text-neutral-50" />

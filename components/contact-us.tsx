@@ -33,6 +33,7 @@ export function ContactUsComponent() {
   return (
     <div className="min-h-screen bg-gray-100">
       <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+      <link rel="icon" href="/favicon.ico" />
         <div className="container flex h-14 items-center">
           <a className="flex items-center justify-center" href="#">
             <Coffee className="h-6 w-6 text-neutral-900 dark:text-neutral-50" />
