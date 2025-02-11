@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import localFont from "next/font/local"
+import Script from "next/script"
 import "./globals.css"
 
 const geistSans = localFont({
@@ -30,13 +31,13 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
-        <script
+        <Script
+          src="https://chatai.afrainity.com/embed/anythingllm-chat-widget.min.js"
           data-embed-id="eaa63ade-d1f7-4d50-ac90-6b5310c8e495"
           data-base-api-url="https://chatai.afrainity.com/api/embed"
-          src="https://chatai.afrainity.com/embed/anythingllm-chat-widget.min.js"
-        ></script>
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
 }
-
