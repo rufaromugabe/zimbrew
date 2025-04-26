@@ -31,12 +31,6 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
-        <Script
-          src="https://chatai.afrainity.com/embed/anythingllm-chat-widget.min.js"
-          data-embed-id="25a8110f-dceb-4607-9314-43e628574716"
-          data-base-api-url="https://chatai.afrainity.com/api/embed"
-          strategy="afterInteractive"
-        />
       </body>
     </html>
   )
